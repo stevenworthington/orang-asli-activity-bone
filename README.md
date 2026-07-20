@@ -13,7 +13,7 @@ Estimands are average exposure–response functions (AERFs), average marginal-ef
 
 ## Data availability
 
-**The analytical data are not included in this repository snapshot.** `data/processed/` is present but empty except for a `README.md` describing the two CSVs the code expects. See `data/README.md` and the manuscript's data-availability statement for how to obtain them. The data are individual-level records from a vulnerable Indigenous cohort; access terms are set by the OA HeLP team.
+**The analytical data are not included in this repository. They are available upon request from the corresponding author, Ian J. Wallace (iwallace@unm.edu).** `data/processed/` is kept as an empty directory (with a `README.md` describing the two CSVs the code expects). The data are individual-level records from the Orang Asli, an Indigenous population of Peninsular Malaysia; access is governed by the Orang Asli Health and Lifeways Project (OA HeLP) and the associated ethics approvals, so the files are shared on request rather than distributed publicly.
 
 Once the data files are in place under `data/processed/`, the pipeline below reproduces every fitted model, figure, and table.
 
@@ -75,5 +75,5 @@ The fitted model objects (`outputs/models/`, `_targets/` cache) are **not** incl
 
 ## License
 
-- **Code** — MIT License (see `LICENSE`).
-- **Data** — Creative Commons Attribution 4.0 International (CC-BY-4.0), when included (see `LICENSE-data.md`), subject to the OA HeLP access terms.
+- **Code** — MIT License (see `LICENSE`). This repository contains code only.
+- **Data** — not distributed here; available on request from the corresponding author under the Orang Asli Health and Lifeways Project (OA HeLP) data-governance terms (see `data/README.md`).

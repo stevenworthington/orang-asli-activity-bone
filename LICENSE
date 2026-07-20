@@ -23,5 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ----------------------------------------------------------------------------
-NOTE: This MIT License covers the CODE in this repository only. Any data files
-placed under data/ are licensed separately under CC-BY-4.0 — see LICENSE-data.md.
+NOTE: This repository contains code only. The analytical data are not
+distributed here; they are available on request from the corresponding author
+under the OA HeLP data-governance terms (see data/README.md).

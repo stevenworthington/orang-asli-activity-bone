@@ -3,7 +3,7 @@
   "upload_type": "software",
   "access_right": "open",
   "license": "MIT",
-  "description": "<p>Replication code for the OA HeLP study of physical activity and bone health in the Orang Asli of Peninsular Malaysia (under review, <em>Journal of Bone and Mineral Research</em>). Bayesian regression (brms / Stan) estimating average exposure-response and marginal-effect functions for (1) physical activity to bone biomarkers and speed-of-sound under a mediator DAG, and (2) a community-level industrialization index to those outcomes via a two-stage cluster-honest estimator.</p><p><strong>License note:</strong> the code is released under the MIT License; any data files distributed with the archive are released under CC-BY-4.0, subject to the OA HeLP data-governance terms.</p>",
+  "description": "<p>Replication code for the OA HeLP study of physical activity and bone health in the Orang Asli of Peninsular Malaysia (under review, <em>Journal of Bone and Mineral Research</em>). Bayesian regression (brms / Stan) estimating average exposure-response and marginal-effect functions for (1) physical activity to bone biomarkers and speed-of-sound under a mediator DAG, and (2) a community-level industrialization index to those outcomes via a two-stage cluster-honest estimator.</p><p><strong>License note:</strong> the code is released under the MIT License. This archive contains code only; the analytical data are not distributed here and are available on request from the corresponding author under the OA HeLP data-governance terms.</p>",
   "keywords": [
     "bone turnover markers",
     "physical activity",
