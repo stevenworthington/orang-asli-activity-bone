@@ -1,0 +1,46 @@
+dag {
+bb="-4.256,-2.937,3.643,3.064"
+"Bone outcome" [outcome,pos="2.957,-0.422"]
+"Diet & nutrient intake" [latent,pos="0.943,-2.566"]
+"Effect modification by body mass" [pos="-0.508,-1.689"]
+"Fat mass & lean body mass" [pos="-1.431,-2.592"]
+"Functional status" [pos="-1.500,0.500"]
+"Other comorbidities" [latent,pos="2.000,1.500"]
+"Physical activity exposure" [exposure,pos="-3.218,-0.459"]
+"Pregnancy/lactation status" [pos="-0.517,0.937"]
+"Smoking/alcohol consumption" [pos="2.221,-1.901"]
+"Village identity" [pos="-1.900,2.400"]
+Age [pos="-2.995,-1.189"]
+Sex [pos="-3.391,-1.901"]
+"Diet & nutrient intake" -> "Bone outcome"
+"Diet & nutrient intake" -> "Fat mass & lean body mass"
+"Effect modification by body mass" -> "Bone outcome"
+"Fat mass & lean body mass" -> "Bone outcome"
+"Fat mass & lean body mass" -> "Effect modification by body mass"
+"Functional status" -> "Physical activity exposure"
+"Other comorbidities" -> "Bone outcome"
+"Other comorbidities" -> "Functional status"
+"Physical activity exposure" -> "Bone outcome"
+"Physical activity exposure" -> "Effect modification by body mass"
+"Physical activity exposure" -> "Fat mass & lean body mass"
+"Pregnancy/lactation status" -> "Bone outcome"
+"Pregnancy/lactation status" -> "Diet & nutrient intake"
+"Pregnancy/lactation status" -> "Fat mass & lean body mass"
+"Pregnancy/lactation status" -> "Physical activity exposure"
+"Pregnancy/lactation status" -> "Smoking/alcohol consumption"
+"Smoking/alcohol consumption" -> "Bone outcome"
+"Smoking/alcohol consumption" -> "Diet & nutrient intake"
+"Smoking/alcohol consumption" -> "Fat mass & lean body mass"
+"Smoking/alcohol consumption" -> "Physical activity exposure"
+Age -> "Bone outcome"
+Age -> "Fat mass & lean body mass"
+Age -> "Physical activity exposure"
+Age -> "Pregnancy/lactation status"
+Sex -> "Bone outcome"
+Sex -> "Diet & nutrient intake"
+Sex -> "Fat mass & lean body mass"
+Sex -> "Physical activity exposure"
+Sex -> "Pregnancy/lactation status"
+"Village identity" -> "Bone outcome"
+"Village identity" -> "Physical activity exposure"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Replication code for \"Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia\"",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "description": "<p>Replication code for the OA HeLP study of physical activity and bone health in the Orang Asli of Peninsular Malaysia (under review, <em>Journal of Bone and Mineral Research</em>). Bayesian regression (brms / Stan) estimating average exposure-response and marginal-effect functions for (1) physical activity to bone biomarkers and speed-of-sound under a mediator DAG, and (2) a community-level industrialization index to those outcomes via a two-stage cluster-honest estimator.</p><p><strong>License note:</strong> the code is released under the MIT License; any data files distributed with the archive are released under CC-BY-4.0, subject to the OA HeLP data-governance terms.</p>",
+  "keywords": [
+    "bone turnover markers",
+    "physical activity",
+    "industrialization",
+    "Orang Asli",
+    "quantitative ultrasound",
+    "CTX-1",
+    "osteocalcin",
+    "Bayesian regression",
+    "brms",
+    "causal inference",
+    "directed acyclic graph",
+    "reproducibility"
+  ],
+  "creators": [
+    { "name": "Sena, Cecilia M. T.", "affiliation": "University of New Mexico, Albuquerque, USA" },
+    { "name": "Worthington, Steven", "affiliation": "Institute for Quantitative Social Science, Harvard University, Cambridge, USA" },
+    { "name": "Kraus, Virginia B.", "affiliation": "Duke University, Durham, USA" },
+    { "name": "Huebner, Janet L.", "affiliation": "Duke Molecular Physiology Institute, Duke University, Durham, USA" },
+    { "name": "Lim, Yvonne A. L.", "affiliation": "Universiti Malaya, Kuala Lumpur, Malaysia" },
+    { "name": "Tan, Bee Ting", "affiliation": "Universiti Malaya, Kuala Lumpur, Malaysia" },
+    { "name": "Tam, Kar Lye", "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" },
+    { "name": "Heng, Edwin Ser Ze", "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" },
+    { "name": "Kivell, Tracy L.", "affiliation": "Max Planck Institute for Evolutionary Anthropology, Leipzig, Germany" },
+    { "name": "Holowka, Nicholas B.", "affiliation": "Penn State University, University Park, USA" },
+    { "name": "Bin Fadzil, Kamal Solhaimi", "affiliation": "Universiti Malaya, Kuala Lumpur, Malaysia" },
+    { "name": "Nicholas, Colin", "affiliation": "Center for Orang Asli Concerns, Subang Jaya, Malaysia" },
+    { "name": "Bin Mohd Sayed, Izandis", "affiliation": "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia" },
+    { "name": "Christopher, Kumaresh Louis", "affiliation": "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia" },
+    { "name": "Watowich, Marina M.", "affiliation": "Vanderbilt University, Nashville, USA" },
+    { "name": "Venkataraman, Vivek V.", "affiliation": "University of Calgary, Calgary, Canada" },
+    { "name": "Lea, Amanda J.", "affiliation": "Vanderbilt University, Nashville, USA" },
+    { "name": "Kraft, Thomas S.", "affiliation": "University of Utah, Salt Lake City, USA" },
+    { "name": "Wallace, Ian J.", "affiliation": "University of New Mexico, Albuquerque, USA" }
+  ]
+}

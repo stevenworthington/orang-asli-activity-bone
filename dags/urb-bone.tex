@@ -1,0 +1,90 @@
+% Industrialization -> bone DAG (Supplementary Figure 3), TikZ standalone.
+% Matches the dual-DAG figure (dag-mediator-confounder-tikz.tex) and the simplified
+% main-text Figure 2: Inter sans, stage-fill palette, rounded nodes, red confounder
+% edges, green causal edge, grey mediator edges, red MSAS nodes.
+%
+% Structure: industrialization (exposure) -> bone (outcome). Age + sex are the ONLY
+% confounders (MSAS, red); daily physical activity, fat/lean mass, pregnancy/lactation,
+% and smoking/alcohol are MEDIATORS downstream of industrialization (grey, not adjusted)
+% -- the reason the minimal sufficient adjustment set is just {age, sex}.
+%
+% Build (xelatex; run twice). In a sandboxed shell redirect the font cache:
+%   TEXMFVAR=$TMPDIR/texmf-var TEXMFCACHE=$TMPDIR/texmf-cache xelatex urb-bone.tex
+% Output: urb-bone.pdf -> outputs/figures/final/supp-fig-3-urb-dag.pdf
+
+\documentclass[border=10pt]{standalone}
+\usepackage{fontspec}
+\setsansfont{Inter}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, fit, backgrounds, calc}
+
+\definecolor{stageSetup}{HTML}{CFD8EA}   % outcome
+\definecolor{stageLang}{HTML}{CFDFCD}    % exposure
+\definecolor{stageAuth}{HTML}{E3C2BC}    % adjustment set
+\definecolor{dark}{HTML}{1E293B}
+\definecolor{slate}{HTML}{64748B}
+\definecolor{linegreen}{HTML}{3F7E4E}    % causal edge
+\definecolor{linered}{HTML}{A85D52}      % confounder edges / MSAS border
+
+\tikzset{
+  font=\sffamily\footnotesize,
+  exposure/.style={rectangle, rounded corners=4pt, draw=slate!75, line width=0.7pt,
+                   fill=stageLang, text=dark, align=center, minimum width=2.1cm, minimum height=0.95cm},
+  outcome/.style={rectangle, rounded corners=4pt, draw=slate!75, line width=0.7pt,
+                  fill=stageSetup, text=dark, align=center, minimum width=1.7cm, minimum height=0.95cm},
+  msas/.style={rectangle, rounded corners=4pt, draw=linered, line width=0.9pt,
+               fill=stageAuth, text=dark, align=center, minimum width=1.4cm, minimum height=0.9cm},
+  obs/.style={rectangle, rounded corners=4pt, draw=slate!75, line width=0.7pt,
+              fill=white, text=dark, align=center, minimum width=1.8cm, minimum height=0.9cm},
+  causal/.style={-{Latex[length=2.6mm]}, draw=linegreen, line width=1.4pt},
+  conf/.style={-{Latex[length=2.6mm]}, draw=linered, line width=1.0pt},
+  other/.style={-{Latex[length=2.6mm]}, draw=slate, line width=0.6pt, opacity=0.85},
+  anno/.style={font=\sffamily\itshape\small, text=slate},
+}
+
+\begin{document}
+\begin{tikzpicture}
+  % --- nodes (exposure left, outcome right; green axis kept clear) ---
+  \node[exposure] (urb)     at (0.6, 2.6)  {Industrialization\\ index\\ exposure};
+  \node[outcome]  (osteo)   at (8.8, 2.6)  {Bone\\ outcome};
+  \node[msas]     (age)     at (1.6, 5.6)  {Age};
+  \node[msas]     (sex)     at (7.6, 5.6)  {Sex};
+  \node[obs]      (pl)      at (4.6, 5.6)  {Pregnancy /\\ lactation};
+  \node[obs]      (dpa)     at (4.7, 3.9)  {Daily physical\\ activity};
+  \node[obs]      (fatlean) at (3.9, 0.7)  {Fat mass \&\\ lean body mass};
+  \node[obs]      (smk)     at (7.0, 0.7)  {Smoking /\\ alcohol};
+
+  % --- grey mediator-chain edges (industrialization -> lifestyle vars -> bone) ---
+  \draw[other] (urb) to[bend left=6]  (dpa);
+  \draw[other] (urb) to[bend right=12] (fatlean);
+  \draw[other] (urb) to[bend left=10] (pl);
+  \draw[other] (urb) to[bend right=24] (smk);
+  \draw[other] (dpa) -- (osteo);
+  \draw[other] (dpa) -- (fatlean);
+  \draw[other] (fatlean) to[bend right=12] (osteo);
+  \draw[other] (pl) to[bend left=8] (osteo);
+  \draw[other] (pl) -- (dpa);
+  \draw[other] (pl) to[bend left=4] (fatlean);
+  \draw[other] (smk) -- (osteo);
+  \draw[other] (smk) -- (fatlean);
+
+  % --- red confounder edges: {age, sex} -> {exposure, outcome, mediators} ---
+  \draw[conf] (age) -- (urb);
+  \draw[conf] (age) to[bend left=20] (osteo.north west);
+  \draw[conf] (age) -- (dpa);
+  \draw[conf] (age) to[bend right=8] (fatlean);
+  \draw[conf] (age) to[bend left=6] (pl);
+  \draw[conf] (sex) to[bend right=16] (urb.north east);
+  \draw[conf] (sex) -- (osteo);
+  \draw[conf] (sex) -- (dpa);
+  \draw[conf] (sex) to[bend left=8] (fatlean);
+  \draw[conf] (sex) to[bend right=6] (pl);
+
+  % --- green causal edge (drawn last, on top of the clear axis) ---
+  \draw[causal] (urb) -- (osteo);
+
+  % --- MSAS caption strip ---
+  \node[anno, align=center] at (4.7, -0.7) {MSAS = \{ Age, Sex \}\qquad lifestyle variables are mediators --- not adjusted};
+\end{tikzpicture}
+\end{document}

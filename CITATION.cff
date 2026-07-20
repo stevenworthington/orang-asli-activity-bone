@@ -1,0 +1,67 @@
+# -----------------------------------------------------------------------------
+# TODO before publishing this archive:
+#   * Verify every given-/family-name split below. Several authors have
+#     Malaysian or compound names whose splits are best-effort and may be wrong.
+#   * Add each author's ORCID (orcid: "https://orcid.org/0000-0000-0000-0000").
+#   * Fill in repository-code (the public GitHub URL) and, after deposit, the
+#     Zenodo DOI (both here and in preferred-citation).
+# -----------------------------------------------------------------------------
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below (preferred-citation)."
+title: >-
+  Replication code for "Industrialization, physical activity, and skeletal
+  health: Evidence from a within-population study of the Indigenous peoples of
+  Peninsular Malaysia"
+type: software
+version: "1.0.0"
+date-released: "2026-07-20"
+license: MIT
+repository-code: "https://github.com/OWNER/REPO"  # TODO: set the public repo URL
+authors:
+  - { given-names: "Cecilia M. T.", family-names: "Sena" }
+  - { given-names: "Steven", family-names: "Worthington" }
+  - { given-names: "Virginia B.", family-names: "Kraus" }
+  - { given-names: "Janet L.", family-names: "Huebner" }
+  - { given-names: "Yvonne A. L.", family-names: "Lim" }
+  - { given-names: "Bee Ting", family-names: "Tan" }          # TODO verify: "Tan Bee Ting A/P Tan Boon Huat"
+  - { given-names: "Kar Lye", family-names: "Tam" }
+  - { given-names: "Edwin Ser Ze", family-names: "Heng" }     # TODO verify split
+  - { given-names: "Tracy L.", family-names: "Kivell" }
+  - { given-names: "Nicholas B.", family-names: "Holowka" }
+  - { given-names: "Kamal Solhaimi", family-names: "Bin Fadzil" }   # TODO verify split
+  - { given-names: "Colin", family-names: "Nicholas" }
+  - { given-names: "Izandis", family-names: "Bin Mohd Sayed" }      # TODO verify split
+  - { given-names: "Kumaresh Louis", family-names: "Christopher" }
+  - { given-names: "Marina M.", family-names: "Watowich" }
+  - { given-names: "Vivek V.", family-names: "Venkataraman" }
+  - { given-names: "Amanda J.", family-names: "Lea" }
+  - { given-names: "Thomas S.", family-names: "Kraft" }
+  - { given-names: "Ian J.", family-names: "Wallace" }
+preferred-citation:
+  type: article
+  title: >-
+    Industrialization, physical activity, and skeletal health: Evidence from a
+    within-population study of the Indigenous peoples of Peninsular Malaysia
+  journal: "Journal of Bone and Mineral Research"
+  year: 2026               # TODO: update on acceptance
+  status: submitted        # TODO: change to "published" and add doi/volume/pages
+  authors:
+    - { given-names: "Cecilia M. T.", family-names: "Sena" }
+    - { given-names: "Steven", family-names: "Worthington" }
+    - { given-names: "Virginia B.", family-names: "Kraus" }
+    - { given-names: "Janet L.", family-names: "Huebner" }
+    - { given-names: "Yvonne A. L.", family-names: "Lim" }
+    - { given-names: "Bee Ting", family-names: "Tan" }
+    - { given-names: "Kar Lye", family-names: "Tam" }
+    - { given-names: "Edwin Ser Ze", family-names: "Heng" }
+    - { given-names: "Tracy L.", family-names: "Kivell" }
+    - { given-names: "Nicholas B.", family-names: "Holowka" }
+    - { given-names: "Kamal Solhaimi", family-names: "Bin Fadzil" }
+    - { given-names: "Colin", family-names: "Nicholas" }
+    - { given-names: "Izandis", family-names: "Bin Mohd Sayed" }
+    - { given-names: "Kumaresh Louis", family-names: "Christopher" }
+    - { given-names: "Marina M.", family-names: "Watowich" }
+    - { given-names: "Vivek V.", family-names: "Venkataraman" }
+    - { given-names: "Amanda J.", family-names: "Lea" }
+    - { given-names: "Thomas S.", family-names: "Kraft" }
+    - { given-names: "Ian J.", family-names: "Wallace" }
