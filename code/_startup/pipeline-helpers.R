@@ -135,7 +135,7 @@ curvature_draws_from_amef <- function(slope_draws, spec) {
 # fixed at that value and the exposure varying over the spec's 1st-99th-
 # percentile grid; query `avg_slopes` with `by = exposure` to recover the
 # posterior of the per-exposure AMEF *conditional on age = age_value*.
-# Used by the Option B age-conditional reporting per Ian's 2026-05-25 ask
+# Used by the age-conditional AMEF age-conditional reporting per Ian's 2026-05-25 ask
 # ("are PA effects largest pre-peak-bone-mass?"). Returns one long-format
 # tibble with all age slices stacked, plus an `age_years` column.
 #

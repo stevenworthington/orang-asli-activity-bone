@@ -1,11 +1,11 @@
 ###############################################################################
 # Supplementary Table 1 numbers: linear-projection slope (95% SHPDI, per 10 index
 # units), P(decline), linearity threshold, and flatness threshold for the three
-# industrialization analyses (Figure 3), from the Option H two-stage AERF draws
-# (outputs/_experiments/set2-option-h/stage2_*.rds).
+# industrialization analyses (Figure 3), from the village-level two-stage AERF draws
+# (outputs/_experiments/industrialization-village-two-stage/stage2_*.rds).
 #
 # Flatness is computed from the central finite-difference AMEF, matching
-# figure-3-option-h.R, so it is the industrialization analogue of the flatness
+# figure-industrialization.R, so it is the industrialization analogue of the flatness
 # threshold in Supplementary Table 2. No point estimates are emitted (HPDI bounds
 # and posterior probabilities only).
 ###############################################################################
@@ -15,7 +15,7 @@ library(here)
 source(here("code", "_startup", "init.R"))
 suppressMessages(library(dplyr))
 
-oh_dir <- here("outputs", "_experiments", "set2-option-h")
+village_dir <- here("outputs", "_experiments", "industrialization-village-two-stage")
 outcol <- c("steps-urb" = "ad_tot_step_count_0_24hr",
             "enmo-urb"  = "ad_mean_enmo_mg_0_24hr",
             "sos-urb"   = "tibia_sos")
@@ -23,7 +23,7 @@ lab    <- c("steps-urb" = "Average daily step count",
             "enmo-urb"  = "Mean daily ENMO",
             "sos-urb"   = "Tibial speed of sound")
 
-# central finite-difference AMEF (matches figure-3-option-h.R::fd_deriv)
+# central finite-difference AMEF (matches figure-industrialization.R::fd_deriv)
 fd_deriv <- function(ad, grid) {
   ng <- ncol(ad); d <- matrix(NA_real_, nrow(ad), ng)
   d[, 1]  <- (ad[, 2]  - ad[, 1])      / (grid[2]  - grid[1])
@@ -34,9 +34,9 @@ fd_deriv <- function(ad, grid) {
 
 for (key in c("steps-urb", "enmo-urb", "sos-urb")) {
   spec <- model_templates[[key]]; ex <- spec$exposure
-  oh   <- readRDS(file.path(oh_dir, paste0("stage2_", key, ".rds")))
-  ad   <- oh$aerf_draws; grid <- oh$grid; nd <- nrow(ad)
-  nv   <- oh$summary$n_villages
+  stage2   <- readRDS(file.path(village_dir, paste0("stage2_", key, ".rds")))
+  ad   <- stage2$aerf_draws; grid <- stage2$grid; nd <- nrow(ad)
+  nv   <- stage2$summary$n_villages
 
   pred <- tibble::tibble(drawid = rep(seq_len(nd), times = ncol(ad)), draw = as.vector(ad))
   pred[[ex]] <- rep(grid, each = nd)

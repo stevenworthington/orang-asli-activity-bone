@@ -1,17 +1,17 @@
 ###############################################################################
 # Manuscript Figure 3 (industrialization -> {SOS, ENMO, steps}) rendered from the
-# VILLAGE-LEVEL two-stage estimator (Option H / Supplementary Material 9), NOT the
+# VILLAGE-LEVEL two-stage estimator (Supplementary Material 9), NOT the
 # individual-level GAM. Reuses the same panel machinery as Figure 4 (make_aerf_panel
 # / make_amef_panel / stack_subfig) so the styling matches exactly; only the source
 # draws differ -- here the second-stage AERF posterior (one curve per ~25-29 village
 # means, smoothed over the industrialization index) instead of the n~860 individual
 # GAM. The wide bands and weak/uncertain shapes are the honest village-level picture.
 #
-# Reads outputs/_experiments/set2-option-h/stage2_<key>.rds (aerf_draws + grid),
+# Reads outputs/_experiments/industrialization-village-two-stage/stage2_<key>.rds (aerf_draws + grid),
 # builds pred_draws / slope_draws in the pipeline's long format, computes the simul
 # bands + linear projection, and writes outputs/figures/final/fig-3-urb.pdf.
 #
-# Run: script -q /dev/null Rscript code/_final/figure-3-option-h.R < /dev/null
+# Run: script -q /dev/null Rscript code/_final/figure-industrialization.R < /dev/null
 ###############################################################################
 
 library(here)
@@ -19,7 +19,7 @@ source(here("code", "_startup", "init.R"))
 suppressMessages(library(dplyr))
 set.seed(SEED)
 
-oh_dir       <- here("outputs", "_experiments", "set2-option-h")
+village_dir       <- here("outputs", "_experiments", "industrialization-village-two-stage")
 final_dir    <- here("outputs", "figures", "final")
 BANDS_LEVELS <- c(0.05, 0.25, 0.50, 0.75, 0.95)
 
@@ -35,9 +35,9 @@ fd_deriv <- function(ad, grid) {
 build_oh_summary <- function(key) {
   spec <- model_templates[[key]]
   ex   <- spec$exposure                                   # "industrial_index"
-  oh   <- readRDS(file.path(oh_dir, paste0("stage2_", key, ".rds")))
-  ad   <- oh$aerf_draws                                   # draws x grid, natural units
-  grid <- oh$grid
+  stage2   <- readRDS(file.path(village_dir, paste0("stage2_", key, ".rds")))
+  ad   <- stage2$aerf_draws                                   # draws x grid, natural units
+  grid <- stage2$grid
   nd   <- nrow(ad); ng <- ncol(ad)
 
   long <- function(mat) {
@@ -64,7 +64,7 @@ build_oh_summary <- function(key) {
 keys <- c("steps-urb", "enmo-urb", "sos-urb")          # citation order: steps (3A, strongest), ENMO (3B), SOS (3C)
 tags <- c("A", "B", "C")
 S    <- setNames(lapply(keys, build_oh_summary), keys)
-cat("Built Option H summaries for", paste(keys, collapse = ", "), "\n")
+cat("Built village two-stage summaries for", paste(keys, collapse = ", "), "\n")
 
 panels <- Map(function(key, tag) {
   s    <- S[[key]]

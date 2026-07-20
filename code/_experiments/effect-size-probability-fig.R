@@ -22,9 +22,9 @@ read_obj <- function(path) {
 floor_of <- c(sos = 31.6, ctx = 0.008, osteo = 990, steps = 1200, enmo = NA)
 
 specs <- list(
-  list(key="sos.urb",    ex="industrial_index",       lab="SOS ~ industrialization",   unit="m/s",   type="detected", out="sos",   oh=TRUE, tag="village-level"),
-  list(key="enmo.urb",   ex="industrial_index",       lab="ENMO ~ industrialization",  unit="mg",    type="detected", out="enmo",  oh=TRUE, tag="village-level"),
-  list(key="steps.urb",  ex="industrial_index",       lab="Steps ~ industrialization", unit="steps", type="detected", out="steps", oh=TRUE, tag="village-level"),
+  list(key="sos.urb",    ex="industrial_index",       lab="SOS ~ industrialization",   unit="m/s",   type="detected", out="sos",   village_level=TRUE, tag="village-level"),
+  list(key="enmo.urb",   ex="industrial_index",       lab="ENMO ~ industrialization",  unit="mg",    type="detected", out="enmo",  village_level=TRUE, tag="village-level"),
+  list(key="steps.urb",  ex="industrial_index",       lab="Steps ~ industrialization", unit="steps", type="detected", out="steps", village_level=TRUE, tag="village-level"),
   list(key="sos.steps",  ex="ad_steps_1k",            lab="SOS ~ daily steps",         unit="m/s",   type="null",     out="sos",   w=5,  wlab="per 5,000 steps"),
   list(key="ctx.steps",  ex="ad_steps_1k",            lab="CTX-1 ~ daily steps",       unit="ng/mL", type="null",     out="ctx",   w=5,  wlab="per 5,000 steps"),
   list(key="osteo.steps",ex="ad_steps_1k",            lab="Osteocalcin ~ daily steps", unit="pg/mL", type="null",     out="osteo", w=5,  wlab="per 5,000 steps"),
@@ -45,9 +45,9 @@ for (i in seq_along(specs)) {
   s   <- specs[[i]]
   col <- (i - 1) %% 3 + 1                                          # 1 = left column (only one with y-axis numbers)
   par(mar = c(4.4, 1.8, 2.9, 0.5))                                 # uniform: every panel the same plot size
-  if (isTRUE(s$oh)) {                                              # village-level two-stage (Option H / SM9)
-    oh <- readRDS(file.path("outputs", "_experiments", "set2-option-h", paste0("stage2_", gsub("\\.", "-", s$key), ".rds")))
-    M  <- oh$aerf_draws; x <- oh$grid; ng <- ncol(M); nd <- nrow(M)
+  if (isTRUE(s$village_level)) {                                              # village-level two-stage (SM9)
+    stage2 <- readRDS(file.path("outputs", "_experiments", "industrialization-village-two-stage", paste0("stage2_", gsub("\\.", "-", s$key), ".rds")))
+    M  <- stage2$aerf_draws; x <- stage2$grid; ng <- ncol(M); nd <- nrow(M)
   } else {                                                         # individual-level GAM (targets cache)
     pred <- as.data.frame(read_obj(file.path("_targets", "objects", paste0("pred_draws_", s$key))))
     pred <- pred[is.finite(pred$draw), ]

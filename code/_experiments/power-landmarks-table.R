@@ -20,7 +20,7 @@ pb <- read.csv(here("outputs", "_experiments", "power-curves", "pa-bone-power.cs
 ub <- read.csv(here("outputs", "_experiments", "power-curves", "industrialization-power.csv"))
 
 # village counts (level of inference for the village-level analyses), from the
-# Option H stage-2 summaries (same real design as the power simulation).
+# Village-level stage-2 summaries (same real design as the power simulation).
 n_vill <- c("sos-urb" = 25L, "steps-urb" = 29L, "enmo-urb" = 29L)
 
 # interpolate y at x0 from a monotone-x grid (NA if x0 is NA / out of range edges held flat)

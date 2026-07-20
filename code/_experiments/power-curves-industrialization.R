@@ -1,11 +1,11 @@
 ###############################################################################
 # A PRIORI power curves for the three community-level industrialization analyses,
-# using the FREQUENTIST PROXY (validated against the Bayesian Option H: matching
+# using the FREQUENTIST PROXY (validated against the Bayesian village two-stage estimator: matching
 # FP 0.04/0.047 and coverage 0.96/0.954). A priori, NOT post-hoc: power is computed
 # at pre-specified true effect sizes swept across a grid, independent of the
 # observed estimates. N_SIM replicates per grid point.
 #
-# Estimator (two-stage cluster-honest, the frequentist twin of Option H):
+# Estimator (two-stage cluster-honest, the frequentist twin of the village two-stage estimator):
 #   stage 1  lm(Y ~ 0 + village + age_c + male)        -> adjusted village means + SE
 #   stage 2  metafor::rma(means ~ index, REML, Hartung-Knapp)   [all three outcomes]
 #   detect   95% slope CI excludes 0

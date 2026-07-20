@@ -2,7 +2,7 @@
 # Calibration of the cluster-honest industrialization -> SOS inference.
 #
 # Validates the two-stage cluster-honest estimator (the frequentist twin of
-# Option H: village fixed-effect adjusted means -> REML random-effects
+# the village two-stage estimator: village fixed-effect adjusted means -> REML random-effects
 # meta-regression on the index, small-sample Hartung-Knapp t) on data that
 # matches the REAL design (25 villages, their actual sizes, real age/sex, real
 # per-village index), under two KNOWN truths:
@@ -14,9 +14,9 @@
 # show the Moulton over-rejection it suffers.
 #
 # DGP parameters are estimated from the real SOS data via lme4. The metafor REML
-# meta-regression is the frequentist analog of Option H's Bayesian se(sigma=TRUE)
+# meta-regression is the frequentist analog of the village two-stage estimator's Bayesian se(sigma=TRUE)
 # meta-regression -- same two-stage structure, so its operating characteristics
-# track Option H's. Base R + lme4 + metafor (no brms); fast.
+# track the village two-stage estimator's. Base R + lme4 + metafor (no brms); fast.
 #
 # Run: script -q /dev/null Rscript code/_experiments/calibration-cluster-honest.R < /dev/null
 ###############################################################################

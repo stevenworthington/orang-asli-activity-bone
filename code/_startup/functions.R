@@ -388,7 +388,7 @@ make_amef_panel <- function(spec, simul_bands_amef, lin_proj,
 }
 
 # Age-conditional AMEF panel. Overlays median AMEF curves at multiple age
-# slices (color-coded by age) for a single spec. Used by the Option B
+# slices (color-coded by age) for a single spec. Used by the age-conditional AMEF
 # supplement figure that addresses Ian's 2026-05-25 question about whether
 # PA effects vary by age. Uncertainty is omitted at the panel level (4
 # overlapping ribbons would be visually unreadable); readers should refer

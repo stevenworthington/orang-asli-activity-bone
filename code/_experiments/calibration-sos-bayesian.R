@@ -1,8 +1,8 @@
 ###############################################################################
 # FULLY-BAYESIAN calibration of the industrialization -> SOS cluster-honest
-# inference (Option H). This is the Bayesian twin of calibration-cluster-honest.R
+# inference (the village two-stage estimator). This is the Bayesian twin of calibration-cluster-honest.R
 # (which used lme4/metafor). Its only purpose is a SANITY CHECK: do the operating
-# characteristics of the *actual Bayesian estimator we report* (Option H: brms
+# characteristics of the *actual Bayesian estimator we report* (the village two-stage estimator: brms
 # village-FE GAM -> brms se() meta-regression) match those of the fast frequentist
 # twin we already calibrated?
 #
@@ -12,7 +12,7 @@
 # If the Bayesian numbers land close to these, the frequentist calibration is a
 # valid proxy for ALL nine analyses and the full ~16-39 h Bayesian suite is moot.
 #
-# Estimator (per simulated dataset), identical to set2-option-h-meta-gam.R:
+# Estimator (per simulated dataset), identical to industrialization-village-two-stage.R:
 #   Stage 1 (within): brm  y ~ village_id + s(age_years, k=5) + sex
 #     -> age/sex-standardized village means + posterior SE (posterior_epred over
 #        the cohort age/sex distribution, one prediction per village).
@@ -79,11 +79,11 @@ if (SMOKE) {
 # Location/covariate terms and variance components come from a CLEAN Bayesian
 # varying-intercept fit (no village-level predictor -> no index/random-intercept
 # collinearity, so it converges cleanly; the joint ~ index + (1|village) fit is the
-# very ridge that Option H's two-stage design exists to avoid, and it will NOT
+# very ridge that the estimator's two-stage design exists to avoid, and it will NOT
 # converge). The effect size beta_eff is the estimated industrialization slope, set
 # to the SAME value the frequentist calibration used (-2.43) so the DGP is identical
 # and the ONLY thing differing between the two calibrations is the estimator (the
-# Bayesian Option H real-data slope is -2.64, i.e. fully consistent). tau_eff (the
+# Bayesian village two-stage real-data slope is -2.64, i.e. fully consistent). tau_eff (the
 # residual between-village SD after the index explains its share) is derived
 # analytically from the Bayesian tau_null.
 message("Estimating DGP parameters (one clean brms varying-intercept fit)...")
@@ -104,7 +104,7 @@ cat(sprintf("\nDGP (Bayesian-sourced):\n  mu=%.0f  g_age=%.1f  d_sex=%.1f  beta_
             mu, g_age, d_sex, beta_eff, beta_eff * idx_range, tau_null, tau_eff, sig, nv, nrow(s)))
 
 
-# ---- DGP + Option H estimator ----
+# ---- DGP + village two-stage estimator ----
 
 gen_y <- function(beta, tau) {
   u <- rnorm(nv, 0, tau)
@@ -159,7 +159,7 @@ power <- mean(r_eff$excl)
 cover <- mean(r_eff$cover)
 
 cat("\n###############################################################################\n")
-cat(sprintf("BAYESIAN Option H calibration  (N_SIM=%d, %d chains x %d post-warmup = %d draws/fit)\n",
+cat(sprintf("BAYESIAN village two-stage calibration  (N_SIM=%d, %d chains x %d post-warmup = %d draws/fit)\n",
             N_SIM, CH, IT - WU, CH * (IT - WU)))
 cat("###############################################################################\n")
 cat(sprintf("                         Bayesian (this run)   Frequentist twin (N=1000)\n"))

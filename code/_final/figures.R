@@ -7,18 +7,18 @@
 # bands (5/25/50/75/95%) + red-dashed linear-projection overlay.
 #
 # Outputs:
-#   outputs/figures/final/fig-4-pa-bone.pdf      Set 1 = manuscript Figure 4: 3 outcomes x 2 exposures
+#   outputs/figures/final/fig-4-pa-bone.pdf      PA -> bone = manuscript Figure 4: 3 outcomes x 2 exposures
 #                                                (rows: osteo / CTX / SOS;
 #                                                 cols: steps / ENMO).
 #                                                Column-major letters A-F.
-#   outputs/figures/final/fig-3-urb.pdf          Set 2 = manuscript Figure 3: 1 row x 3 outcomes
+#   outputs/figures/final/fig-3-urb.pdf          industrialization = manuscript Figure 3: 1 row x 3 outcomes
 #                                                (cols: SOS / ENMO / steps).
 #                                                Letters A-C.
 #   outputs/tables/spec-summary.csv              Headline numbers per spec.
 #
 # Population-average summaries only -- the t2(age, exposure) tensor smooth
 # is marginalized over `datagrid(model)` (age at its mean, other covariates
-# at typical values). Age-conditional AMEFs (Option B, per Ian 2026-05-25)
+# at typical values). Age-conditional AMEFs (per Ian 2026-05-25)
 # are a separate pass; tracked in TASKS.md.
 ###############################################################################
 
@@ -90,7 +90,7 @@ summaries <- setNames(lapply(spec_keys, build_spec_summaries), spec_keys)
 cat("Built simul-bands + linear projection for all", length(spec_keys), "specs\n")
 
 
-# ---- Set 1 manuscript figure (PA -> bone, 3 outcomes x 2 exposures) ----
+# ---- PA -> bone manuscript figure (3 outcomes x 2 exposures) ----
 
 # Visual layout (column-major letters per graveyard fig-5 convention):
 #
@@ -155,7 +155,7 @@ ggsave(fig_1, file = file.path(final_dir, "fig-4-pa-bone.pdf"),
 cat("Saved fig-4-pa-bone.pdf\n")
 
 
-# ---- Set 2 manuscript figure (industrialization -> {SOS, ENMO, steps}) ----
+# ---- Industrialization manuscript figure ({SOS, ENMO, steps}) ----
 
 # 1 row x 3 cols landscape. Order per Ian's 2026-05-23 email scope:
 # "tibial sos, ENMO, and daily steps".
@@ -225,7 +225,7 @@ ggsave(fig_supp_conf,
 cat("Saved supp-fig-6-pa-bone-conf.pdf\n")
 
 
-# ---- Age-conditional AMEF supplement figure (Option B per Ian 2026-05-25) ----
+# ---- Age-conditional AMEF supplement figure (per Ian 2026-05-25) ----
 #
 # Mirrors the 3x2 Fig 4 grid (mediator-DAG PA -> bone) but each cell shows
 # four median AMEF curves color-coded by age (25 / 35 / 50 / 65). Addresses

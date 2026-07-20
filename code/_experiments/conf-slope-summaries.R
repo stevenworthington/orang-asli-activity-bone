@@ -5,7 +5,7 @@
 #     code/_final/supp-slope-table.R) -> P(slope < 0)
 #   - per-person contrast effect = slope * contrast width (5 = 5,000 steps,
 #     10 = 10 mg ENMO); U95 = 95th percentile of |effect| (matches
-#     code/_experiments/fe-set1-experiment.R, which produced the main-text
+#     code/_experiments/pa-bone-village-fixed-effects.R, which produced the main-text
 #     "95% upper bound" magnitudes), reported as % of the outcome SD and as a
 #     multiple of the assay-noise floor.
 # Posterior probability of the HYPOTHESIZED direction:
@@ -22,7 +22,7 @@ hpdi <- function(x, m = 0.95) { x <- sort(x); n <- length(x); k <- floor(m * n)
   i <- which.min(x[(k + 1):n] - x[1:(n - k)]); c(x[i], x[i + k]) }
 
 # reconciled measurement-noise floors + outcome SDs (natural units), from
-# fe-set1-experiment.R (the source of the main-text magnitude numbers)
+# pa-bone-village-fixed-effects.R (the source of the main-text magnitude numbers)
 sds    <- c(sos = 182.15, ctx = 0.116, osteo = 19082.9)
 floors <- c(sos = 31.6,   ctx = 0.008, osteo = 990)
 units  <- c(sos = "m/s",  ctx = "ng/mL", osteo = "pg/mL")

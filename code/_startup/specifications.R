@@ -9,12 +9,12 @@
 # `docs/briefs/2026-05-23-ian-clean-dataset-email.md`,
 # `docs/briefs/2026-05-25-ian-scope-confirmation-reply.md`):
 #
-#   Set 1 -- causal PA → bone. Two exposures (ENMO, daily steps) × three
+#   Causal PA → bone. Two exposures (ENMO, daily steps) × three
 #            outcomes (tibial SOS, CTX-1, osteocalcin) = 6 analyses. DAG-
 #            derived adjustment set: age (in the tensor smooth) + sex +
 #            functional status + pregnancy/lactation.
 #
-#   Set 2 -- industrialization → {tibial SOS, ENMO, daily steps}, age + sex
+#   Industrialization → {tibial SOS, ENMO, daily steps}, age + sex
 #            only = 3 analyses.
 #
 # = 9 analyses total.
@@ -84,7 +84,7 @@ brm_priors_urb <- c(
 model_templates <- list(
 
   # -------------------------------------------------------------------------
-  # Set 1 -- causal PA → bone (n = 6)
+  # Causal PA → bone (n = 6)
   # -------------------------------------------------------------------------
 
   "sos-steps" = list(
@@ -364,7 +364,7 @@ model_templates <- list(
   ),
 
   # -------------------------------------------------------------------------
-  # Set 2 -- industrialization (n = 3). Adjustment set: age + sex only.
+  # Industrialization (n = 3). Adjustment set: age + sex only.
   # -------------------------------------------------------------------------
 
   "sos-urb" = list(

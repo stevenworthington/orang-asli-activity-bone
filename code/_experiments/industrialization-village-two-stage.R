@@ -1,8 +1,8 @@
 ###############################################################################
-# EXPERIMENT (Set 2, Option H): standardized village-level meta-GAM.
+# Industrialization analysis: standardized village-level two-stage meta-GAM (PRIMARY).
 #   PRIMARY cluster-level anchor (per the 2026-06-15 second opinion).
 #
-# PREPPED, NOT YET RUN. Status: untested until executed.
+# Primary estimator for the industrialization analyses (Supplementary Material 5).
 #
 # Two stages, inference at the level the exposure varies (the village):
 #   Stage 1 (within): outcome ~ village_id + s(age_years, k=5) + sex
@@ -19,7 +19,7 @@
 # treats adj_se as known; full posterior propagation (carry stage-1 draws into
 # stage 2) is the upgrade -- TODO if a reviewer presses.
 #
-# ISOLATED: writes only to outputs/_experiments/set2-option-h/. pty + sandbox off.
+# ISOLATED: writes only to outputs/_experiments/industrialization-village-two-stage/. pty + sandbox off.
 # Smoke: SET2_SMOKE=1 (1 spec, fast stage-1 MCMC).
 ###############################################################################
 
@@ -40,7 +40,7 @@ SMOKE <- nzchar(Sys.getenv("SET2_SMOKE"))
 specs <- c("sos-urb", "steps-urb", "enmo-urb")
 if (SMOKE) specs <- "sos-urb"
 cfg <- if (SMOKE) list(w = 500, i = 1500, c = 4) else list(w = WARMUP, i = ITER, c = CHAINS)
-out_dir <- make_out("set2-option-h")
+out_dir <- make_out("industrialization-village-two-stage")
 
 for (key in specs) {
   spec <- model_templates[[key]]; ex <- "industrial_index"; sf <- spec$outcome_scale_factor
@@ -52,7 +52,7 @@ for (key in specs) {
   # ---- Stage 1: village FE + age/sex; standardize each village over cohort age/sex ----
   s1_form <- bf(as.formula(sprintf("%s ~ village_id + s(age_years, k = 5) + sex", resp)),
                 family = gaussian(link = "identity"))
-  message(sprintf("Option H stage 1: %s  (n=%d, %d villages)", key, nrow(d), length(villages)))
+  message(sprintf("Village two-stage, stage 1: %s  (n=%d, %d villages)", key, nrow(d), length(villages)))
   m1 <- brm(s1_form, data = d,
             prior = set_prior("student_t(3, 0, 2.5)", class = "sds"),
             warmup = cfg$w, iter = cfg$i, thin = THIN, chains = cfg$c, cores = cfg$c,
@@ -92,7 +92,7 @@ for (key in specs) {
   interior <- mean(apply(ep, 1, which.max) %in% 2:(ng - 1)) # P(interior peak)
   he <- hpdi(endpt); hs <- hpdi(swing); hp <- hpdi(pk_loc)
 
-  cat(sprintf("\n=== %s  (Option H, %s; %d villages) ===\n", key, spec$outcome_label, length(villages)))
+  cat(sprintf("\n=== %s  (village two-stage, %s; %d villages) ===\n", key, spec$outcome_label, length(villages)))
   cat(sprintf("  smooth stage-2: across-gradient Δ HPDI [%.4g, %.4g]  P(decline)=%.3f | swing HPDI [%.4g, %.4g]\n",
       he[1], he[2], mean(endpt < 0), hs[1], hs[2]))
   cat(sprintf("                  peak-location HPDI [%.4g, %.4g] | P(interior peak)=%.2f\n", hp[1], hp[2], interior))

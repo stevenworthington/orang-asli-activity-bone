@@ -1,19 +1,19 @@
 ###############################################################################
 # Linear-projection slope + linearity threshold for the three industrialization
-# analyses, from the Option H two-stage AERF draws. Mirrors the PA->bone reporting
+# analyses, from the village-level two-stage AERF draws. Mirrors the PA->bone reporting
 # (linear_projection + q95 max-deviation-from-linear, as % of the outcome's range)
 # so the industrialization Results can use the same framework rather than the
 # post-hoc interior-peak test. Read-only; prints numbers, edits nothing.
 ###############################################################################
 library(here); source(here("code", "_startup", "init.R")); suppressMessages(library(dplyr))
-oh_dir <- here("outputs", "_experiments", "set2-option-h")
+village_dir <- here("outputs", "_experiments", "industrialization-village-two-stage")
 outcol <- c("sos-urb" = "tibia_sos", "enmo-urb" = "ad_mean_enmo_mg_0_24hr",
             "steps-urb" = "ad_tot_step_count_0_24hr")
 
 for (key in c("steps-urb", "enmo-urb", "sos-urb")) {
   spec <- model_templates[[key]]; ex <- spec$exposure
-  oh <- readRDS(file.path(oh_dir, paste0("stage2_", key, ".rds")))
-  ad <- oh$aerf_draws; grid <- oh$grid; nd <- nrow(ad); ng <- ncol(ad)
+  stage2 <- readRDS(file.path(village_dir, paste0("stage2_", key, ".rds")))
+  ad <- stage2$aerf_draws; grid <- stage2$grid; nd <- nrow(ad); ng <- ncol(ad)
   pred <- tibble::tibble(drawid = rep(seq_len(nd), times = ng), draw = as.vector(ad))
   pred[[ex]] <- rep(grid, each = nd)
 

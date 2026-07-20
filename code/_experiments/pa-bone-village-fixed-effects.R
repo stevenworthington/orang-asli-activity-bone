@@ -1,7 +1,7 @@
 ###############################################################################
-# EXPERIMENT: village fixed effects for the six Set-1 (PA -> bone) specs.
+# EXPERIMENT: village fixed effects for the six PA -> bone specs.
 #
-# Adds `+ village_id` (fixed-effect dummies) to each existing Set-1 formula and
+# Adds `+ village_id` (fixed-effect dummies) to each existing PA -> bone formula and
 # re-fits, to estimate the WITHIN-village individual PA effect (absorbing all
 # village-constant confounding: industrialization, diet/ecology, per-village
 # operator, etc.). This is a *different estimand* from the pooled model, not a
@@ -9,7 +9,7 @@
 # summaries (best-linear-projection slope HPDI, P(slope<0), per-person contrast
 # HPDI + U95 vs the reconciled noise floor / outcome SD).
 #
-# ISOLATED: writes only to outputs/_experiments/fe-set1/. Does NOT touch the
+# ISOLATED: writes only to outputs/_experiments/pa-bone-village-fe/. Does NOT touch the
 # registry, the targets store, or any canonical model/figure. Run with the pty
 # wrapper + sandbox off (CODING.md). Smoke mode: FE_SMOKE=1 (1 spec, fast MCMC).
 ###############################################################################
@@ -19,11 +19,11 @@ source(here("code", "_startup", "init.R"))
 suppressMessages({ library(brms); library(dplyr) })
 
 SMOKE <- nzchar(Sys.getenv("FE_SMOKE"))
-set1  <- c("sos-steps", "sos-enmo", "ctx-steps", "ctx-enmo", "osteo-steps", "osteo-enmo")
-if (SMOKE) set1 <- "sos-steps"
+pa_bone_specs  <- c("sos-steps", "sos-enmo", "ctx-steps", "ctx-enmo", "osteo-steps", "osteo-enmo")
+if (SMOKE) pa_bone_specs <- "sos-steps"
 cfg <- if (SMOKE) list(w = 500, i = 1500, c = 4) else list(w = WARMUP, i = ITER, c = CHAINS)
 
-out_dir <- here("outputs", "_experiments", "fe-set1")
+out_dir <- here("outputs", "_experiments", "pa-bone-village-fe")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 hpdi <- function(x, m = 0.95) { x <- sort(x); n <- length(x); k <- floor(m * n)
@@ -46,7 +46,7 @@ summ <- function(pred, ex, w) {
 }
 
 rows <- list()
-for (key in set1) {
+for (key in pa_bone_specs) {
   spec <- model_templates[[key]]; ex <- spec$exposure; w <- cwidth(ex)
   oc   <- sub("-.*", "", key)                                # sos / ctx / osteo
   fl   <- floors[[oc]]; sd <- sds[[oc]]; u <- units[[oc]]
