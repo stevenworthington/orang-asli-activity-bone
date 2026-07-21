@@ -35,3 +35,8 @@ dags/*.pdf
 
 # --- macOS ---
 .DS_Store
+
+# --- agent / IDE session state (must never enter the deposit) ---
+.claude/
+.vscode/
+.idea/
