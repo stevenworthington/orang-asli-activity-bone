@@ -20,7 +20,7 @@ Once the data files are in place under `data/processed/`, the pipeline below rep
 ## Software environment
 
 - **R 4.6.0** with the exact package versions pinned in `renv.lock` (329 packages).
-- **CmdStan** via `{cmdstanr}` is the Stan backend for `{brms}`. Install it after restoring the library (`cmdstanr::install_cmdstan()`); the manuscript used Stan 2.38.0.
+- **CmdStan** via `{cmdstanr}` is the Stan backend for `{brms}`; install it after restoring the library. The manuscript used Stan 2.38.0.
 
 Restore the environment from the project root:
 
@@ -39,9 +39,9 @@ Run order, from the repository root. `just` recipes are the front door (`just` w
 1. **Restore the environment** — `renv::restore()` (see above).
 2. **Place the data** — copy the two CSVs into `data/processed/` (see `data/README.md`).
 3. **Fit the models** — `just fit-all` runs the `_targets.R` pipeline: 15 specifications (6 mediator-DAG + 6 confounder-DAG + 3 industrialization), each producing a fitted `brms` object plus AERF / AMEF / curvature posterior draws. Only out-of-date targets re-run. Individual specs can also be run directly (`just fit-script sos-steps`, or `Rscript code/sos-steps.R`); a fast smoke test is `just smoke sos-steps`.
-4. **Fit the industrialization primary estimator** — `Rscript code/_experiments/industrialization-village-two-stage.R` (the two-stage cluster-honest village-level meta-GAM; writes `outputs/_experiments/industrialization-village-two-stage/`).
+4. **Fit the industrialization primary estimator** — `Rscript code/_experiments/industrialization-village-two-stage.R` (the two-stage village-level meta-GAM; writes `outputs/_experiments/industrialization-village-two-stage/`).
 5. **Run the supplementary analyses** — once the fits from step 3–4 exist, these are independent readouts (each `Rscript code/_experiments/<name>.R`):
-   - `calibration-cluster-honest.R`, `calibration-sos-bayesian.R` — calibration of the cluster-honest estimator (frequentist proxy + Bayesian twin).
+   - `calibration-cluster-honest.R`, `calibration-sos-bayesian.R` — calibration of the village-level estimator (frequentist proxy + Bayesian twin).
    - `power-curves-pa-bone.R`, `power-curves-industrialization.R` — a-priori power sweeps; `power-curves-figure.R` renders them; `power-landmarks-table.R` extracts landmark power.
    - `effect-size-probability-fig.R` — effect-size-vs-posterior-probability ("reverse-ROPE") curves.
    - `pa-contrast-effects.R`, `pa-bone-village-fixed-effects.R` — locked-contrast per-person effects and 95% upper-bound magnitudes for the PA→bone nulls.
