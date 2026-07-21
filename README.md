@@ -2,18 +2,18 @@
 
 Replication code for:
 
-> Sena CMT, Worthington S, Kraus VB, Huebner JL, Lim YAL, Tan BT, Tam KL, Heng ESZ, Kivell TL, Holowka NB, Fadzil KS, Nicholas C, Sayed IM, Christopher KL, Watowich MM, Venkataraman VV, Lea AJ, Kraft TS, Wallace IJ. *Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia.* (under review, *Journal of Bone and Mineral Research*).
+> Sena CMT, Worthington S, Kraus VB, Huebner JL, Lim YAL, Tan BT, Tam KL, Heng ESZ, Kivell TL, Holowka NB, Fadzil KS, Nicholas C, Sayed IM, Christopher KL, Watowich MM, Venkataraman VV, Lea AJ, Kraft TS, Wallace IJ. *Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia.*
 
 The study is a causal analysis of physical activity and bone health in the Orang Asli Health and Lifeways Project (OA HeLP) cohort (n = 1,007), across two analysis sets:
 
-- **Set 1 — physical activity → bone (mediator DAG, primary).** Daily step count and mean daily ENMO against tibial speed-of-sound (SOS), CTX-1, and osteocalcin; within-village (village fixed-effects) estimand. Adjustment: age (in the tensor smooth) + sex + functional status + pregnancy/lactation + smoking + alcohol.
-- **Set 2 — industrialization → outcome.** A community-level industrialization index against tibial SOS, daily steps, and mean daily ENMO; across-community estimand via a two-stage cluster-honest village-level estimator. Adjustment: age + sex.
+- **Set 1 — physical activity → bone.** Daily step count and mean daily ENMO against tibial speed-of-sound (SOS), CTX-1, and osteocalcin; within-village (village fixed-effects) estimand. Adjustment (mediator DAG): age (in a tensor smooth) + sex + functional status + pregnancy/lactation + smoking + alcohol.
+- **Set 2 — industrialization → outcome.** A community-level industrialization index against tibial SOS, daily steps, and mean daily ENMO; across-community estimand via a two-stage village-level estimator. Adjustment: age + sex.
 
 Estimands are average exposure–response functions (AERFs), average marginal-effect functions (AMEFs), and their curvature, reported as linear-projection slopes with 95% simultaneous highest-posterior-density intervals.
 
 ## Data availability
 
-**The analytical data are not included in this repository. They are available upon request from the corresponding author, Ian J. Wallace (iwallace@unm.edu).** `data/processed/` is kept as an empty directory (with a `README.md` describing the two CSVs the code expects). The data are individual-level records from the Orang Asli, an Indigenous population of Peninsular Malaysia; access is governed by the Orang Asli Health and Lifeways Project (OA HeLP) and the associated ethics approvals, so the files are shared on request rather than distributed publicly.
+**The data are not included in this repository. They are available upon request from the corresponding author, Ian J. Wallace (iwallace@unm.edu).** `data/processed/` is kept as an empty directory (with a `README.md` describing the two CSVs the code expects). The data are individual-level records from the Orang Asli, an Indigenous population of Peninsular Malaysia; access is governed by the Orang Asli Health and Lifeways Project (OA HeLP) and the associated ethics approvals, so the files are shared on request rather than distributed publicly.
 
 Once the data files are in place under `data/processed/`, the pipeline below reproduces every fitted model, figure, and table.
 
