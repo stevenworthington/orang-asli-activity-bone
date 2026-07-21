@@ -6,10 +6,10 @@ Replication code for:
 
 The study is a causal analysis of physical activity and bone health in the Orang Asli Health and Lifeways Project (OA HeLP) cohort (n = 1,007), across two analysis sets:
 
-- **Set 1 — physical activity → bone.** Daily step count and mean daily ENMO against tibial speed-of-sound (SOS), CTX-1, and osteocalcin; within-village (village fixed-effects) estimand. Adjustment (mediator DAG): age (in a tensor smooth) + sex + functional status + pregnancy/lactation + smoking + alcohol.
-- **Set 2 — industrialization → outcome.** A community-level industrialization index against tibial SOS, daily steps, and mean daily ENMO; across-community estimand via a two-stage village-level estimator. Adjustment: age + sex.
+- **Physical activity → bone.** Daily step count and mean daily ENMO against tibial speed-of-sound (SOS), CTX-1, and osteocalcin; within-village (village fixed-effects) estimand. Adjustment (mediator DAG): age (in a tensor smooth) + sex + functional status + pregnancy/lactation + smoking + alcohol.
+- **Industrialization → outcome.** A community-level industrialization index against tibial SOS, daily steps, and mean daily ENMO; across-community estimand via a two-stage village-level estimator. Adjustment: age + sex.
 
-Estimands are average exposure–response functions (AERFs), average marginal-effect functions (AMEFs), and their curvature, reported as linear-projection slopes with 95% simultaneous highest-posterior-density intervals.
+The reported causal estimands are the average exposure–response function (AERF) and its first derivative, the average marginal-effect function (AMEF). Where the AERF is approximately linear it is summarized by its linear-projection slope, reported with a 95% highest-posterior-density interval and the posterior probability of the hypothesized sign. Curvature (the AERF's second derivative) is reported as a diagnostic of departure from linearity.
 
 ## Data availability
 
@@ -51,7 +51,7 @@ Run order, from the repository root. `just` recipes are the front door (`just` w
    - `prior-predictive-check.R` — prior-predictive validation for the GAM specs.
    - `walking-experiment-rope.R` — the acute-walking-experiment reverse-ROPE analysis (needs `compiled-walking-experiment-18june2026.csv`).
 6. **Assemble figures and tables** — `code/_final/`: `figures.R` (main + supplementary AERF/AMEF figures), `figure-industrialization.R` (industrialization figure), `supp-slope-table.R` and `supp-industrialization-table.R` (supplementary tables). Outputs land in `outputs/figures/final/` and `outputs/tables/`.
-7. **DAG figures** — the four causal diagrams are TikZ/`dagitty` sources in `dags/` (`.dag` = graph, `.tex` = figure). Build the `.tex` files with XeLaTeX to produce the mediator, confounder, and industrialization DAG figures.
+7. **DAG figures** — the four causal diagrams are TikZ/`dagitty` sources in `dags/` (`.dag` = graph, `.tex` = figure). Building them requires a LaTeX distribution with XeLaTeX (e.g. TeX Live or MacTeX) installed. Compile the `.tex` files to produce the mediator (full and simplified), confounder, and industrialization DAG figures.
 
 `code/_experiments/run-village-analyses.sh` records the driver order for the village-level analyses and can be consulted as a worked example.
 

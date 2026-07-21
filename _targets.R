@@ -4,8 +4,8 @@
 # Use `just fit-all` (or `targets::tar_make()` directly) to materialize.
 # Use `just status` to see what's stale; `just viz` for the dependency graph.
 #
-# Pipeline shape: for each of the 9 specs in model_templates (6 causal
-# PA → bone + 3 industrialization), four targets are generated dynamically
+# Pipeline shape: for each of the 15 specs in model_templates (6 mediator
+# PA → bone + 6 confounder-DAG variants + 3 industrialization), four targets are generated dynamically
 # via `tarchetypes::tar_map`:
 #
 #   <spec>_fit              -- fitted brms object (the long-running step)
@@ -13,7 +13,7 @@
 #   <spec>_slope_draws      -- AMEF posterior draws (first derivative)
 #   <spec>_curvature_draws  -- finite-difference curvature draws (second derivative)
 #
-# 36 targets total. The pipeline invalidates downstream targets when any of
+# 60 targets total. The pipeline invalidates downstream targets when any of
 # (data file, spec registry, helper functions) changes, so refits happen
 # automatically when the spec is edited but never when an unrelated script is
 # touched.
@@ -68,7 +68,7 @@ tar_option_set(
 # ---- Pipeline ---------------------------------------------------------------
 
 # Per-spec target template, expanded via tar_map() to produce four targets
-# (fit, pred_draws, slope_draws, curvature_draws) for each of the 9 specs.
+# (fit, pred_draws, slope_draws, curvature_draws) for each of the 15 specs.
 spec_targets <- tar_map(
   values = tibble::tibble(spec_key = names(model_templates)),
   names  = spec_key,
@@ -136,7 +136,7 @@ list(
   ),
 
 
-  # -- Per-spec fits + draws (9 specs x 4 targets = 36 targets) -------------
+  # -- Per-spec fits + draws (15 specs x 4 targets = 60 targets) -------------
 
   spec_targets
 
