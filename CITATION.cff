@@ -3,8 +3,7 @@
 #   * Verify every given-/family-name split below. Several authors have
 #     Malaysian or compound names whose splits are best-effort and may be wrong.
 #   * Add each author's ORCID (orcid: "https://orcid.org/0000-0000-0000-0000").
-#   * Fill in repository-code (the public GitHub URL) and, after deposit, the
-#     Zenodo DOI (both here and in preferred-citation).
+#   * After the Zenodo deposit, add the DOI (here and in preferred-citation).
 # -----------------------------------------------------------------------------
 cff-version: 1.2.0
 message: "If you use this code, please cite the article below (preferred-citation)."
@@ -16,7 +15,7 @@ type: software
 version: "1.0.0"
 date-released: "2026-07-20"
 license: MIT
-repository-code: "https://github.com/OWNER/REPO"  # TODO: set the public repo URL
+repository-code: "https://github.com/stevenworthington/orang-asli-activity-bone"
 authors:
   - { given-names: "Cecilia M. T.", family-names: "Sena" }
   - { given-names: "Steven", family-names: "Worthington" }
