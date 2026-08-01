@@ -1,0 +1,112 @@
+{
+  "title": "Replication code for \"Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia\"",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "description": "<p>Replication code for the OA HeLP study of physical activity and bone health in the Orang Asli of Peninsular Malaysia (under review, <em>Journal of Bone and Mineral Research</em>). Bayesian regression (brms / Stan) estimating average exposure-response and marginal-effect functions for (1) physical activity to bone biomarkers and speed-of-sound under a mediator DAG, and (2) a community-level industrialization index to those outcomes via a two-stage cluster-honest estimator.</p><p><strong>License note:</strong> the code is released under the MIT License. This archive contains code only; the analytical data are not distributed here and are available on request from the corresponding author under the OA HeLP data-governance terms.</p>",
+  "keywords": [
+    "bone turnover markers",
+    "physical activity",
+    "industrialization",
+    "Orang Asli",
+    "quantitative ultrasound",
+    "CTX-1",
+    "osteocalcin",
+    "Bayesian regression",
+    "brms",
+    "causal inference",
+    "directed acyclic graph",
+    "reproducibility"
+  ],
+  "creators": [
+    {
+      "name": "Sena, Cecilia M. T.",
+      "affiliation": "Department of Anthropology, University of New Mexico, Albuquerque, USA"
+    },
+    {
+      "name": "Worthington, Steven",
+      "affiliation": "Institute for Quantitative Social Science, Harvard University, Cambridge, USA",
+      "orcid": "0000-0001-9550-5797"
+    },
+    {
+      "name": "Kraft, Thomas S.",
+      "affiliation": "Department of Anthropology, University of Utah, Salt Lake City, USA; Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Amorim, Fabiano T.",
+      "affiliation": "Department of Health, Exercise Science, and Sport, University of New Mexico, Albuquerque, USA"
+    },
+    {
+      "name": "Christopher, Kumaresh Louis",
+      "affiliation": "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Emery Thompson, Melissa",
+      "affiliation": "Department of Anthropology, University of New Mexico, Albuquerque, USA; Department of Evolutionary Anthropology, Duke University, Durham, USA"
+    },
+    {
+      "name": "bin Fadzil, Kamal Solhaimi",
+      "affiliation": "Department of Anthropology and Sociology, Universiti Malaya, Kuala Lumpur, Malaysia; Center for Malaysian Indigenous Studies, Universiti Malaya, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Heng, Edwin Ser Ze",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Holowka, Nicholas B.",
+      "affiliation": "Department of Anthropology, Penn State University, University Park, USA"
+    },
+    {
+      "name": "Tan, Bee Ting",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Parasitology, Faculty of Medicine, Universiti Malaya, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Huebner, Janet L.",
+      "affiliation": "Duke Molecular Physiology Institute, Duke University, Durham, USA"
+    },
+    {
+      "name": "Kivell, Tracy L.",
+      "affiliation": "Department of Human Origins, Max Planck Institute for Evolutionary Anthropology, Leipzig, Germany"
+    },
+    {
+      "name": "Kraus, Virginia B.",
+      "affiliation": "Duke Molecular Physiology Institute, Duke University, Durham, USA; Division of Rheumatology, Department of Medicine, Duke University, Durham, USA"
+    },
+    {
+      "name": "Lim, Yvonne A. L.",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Parasitology, Faculty of Medicine, Universiti Malaya, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Nicholas, Colin",
+      "affiliation": "Center for Orang Asli Concerns, Subang Jaya, Malaysia"
+    },
+    {
+      "name": "Ramirez, Marissa",
+      "affiliation": "Department of Health, Exercise Science, and Sport, University of New Mexico, Albuquerque, USA"
+    },
+    {
+      "name": "bin Mohd Sayed, Izandis",
+      "affiliation": "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Tam, Kar Lye",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia"
+    },
+    {
+      "name": "Watowich, Marina M.",
+      "affiliation": "Department of Biological Sciences, Vanderbilt University, Nashville, USA"
+    },
+    {
+      "name": "Venkataraman, Vivek V.",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Anthropology and Archaeology, University of Calgary, Calgary, Canada"
+    },
+    {
+      "name": "Lea, Amanda J.",
+      "affiliation": "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Biological Sciences, Vanderbilt University, Nashville, USA"
+    },
+    {
+      "name": "Wallace, Ian J.",
+      "affiliation": "Department of Anthropology, University of New Mexico, Albuquerque, USA; Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia"
+    }
+  ]
+}
