@@ -1,0 +1,34 @@
+dag {
+bb="-3.5,-2.5,3.5,2.5"
+"Bone outcome" [outcome,pos="2.500,0.000"]
+"Daily physical activity" [pos="0.000,0.000"]
+"Fat mass & lean body mass" [pos="-0.500,-1.500"]
+"Industrialization index" [exposure,pos="-2.800,0.000"]
+"Pregnancy/lactation status" [pos="-0.500,1.500"]
+"Smoking/alcohol consumption" [pos="1.000,-1.500"]
+Age [pos="-1.800,-1.500"]
+Sex [pos="-1.800,1.500"]
+"Daily physical activity" -> "Bone outcome"
+"Daily physical activity" -> "Fat mass & lean body mass"
+"Fat mass & lean body mass" -> "Bone outcome"
+"Industrialization index" -> "Bone outcome"
+"Industrialization index" -> "Daily physical activity"
+"Industrialization index" -> "Fat mass & lean body mass"
+"Industrialization index" -> "Pregnancy/lactation status"
+"Industrialization index" -> "Smoking/alcohol consumption"
+"Pregnancy/lactation status" -> "Bone outcome"
+"Pregnancy/lactation status" -> "Daily physical activity"
+"Pregnancy/lactation status" -> "Fat mass & lean body mass"
+"Smoking/alcohol consumption" -> "Bone outcome"
+"Smoking/alcohol consumption" -> "Fat mass & lean body mass"
+Age -> "Bone outcome"
+Age -> "Daily physical activity"
+Age -> "Fat mass & lean body mass"
+Age -> "Industrialization index"
+Age -> "Pregnancy/lactation status"
+Sex -> "Bone outcome"
+Sex -> "Daily physical activity"
+Sex -> "Fat mass & lean body mass"
+Sex -> "Industrialization index"
+Sex -> "Pregnancy/lactation status"
+}

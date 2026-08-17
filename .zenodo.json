@@ -1,0 +1,28 @@
+{
+  "title": "Replication code for \"Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia\"",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "description": "<p>Replication code for the OA HeLP study of physical activity and bone health in the Orang Asli of Peninsular Malaysia (under review, <em>Journal of Bone and Mineral Research</em>). Bayesian regression (brms / Stan) estimating average exposure-response and marginal-effect functions for (1) physical activity to bone biomarkers and speed-of-sound under a mediator DAG, and (2) a community-level industrialization index to those outcomes via a one-stage hierarchical model with a community random intercept.</p><p><strong>License note:</strong> the code is released under the MIT License. This archive contains code only; the analytical data are not distributed here and are available on request from the corresponding author under the OA HeLP data-governance terms.</p>",
+  "keywords": [
+    "bone turnover markers",
+    "physical activity",
+    "industrialization",
+    "Orang Asli",
+    "quantitative ultrasound",
+    "CTX-1",
+    "osteocalcin",
+    "Bayesian regression",
+    "brms",
+    "causal inference",
+    "directed acyclic graph",
+    "reproducibility"
+  ],
+  "creators": [
+    {
+      "name": "Worthington, Steven",
+      "affiliation": "Institute for Quantitative Social Science, Harvard University, Cambridge, USA",
+      "orcid": "0000-0001-9550-5797"
+    }
+  ]
+}

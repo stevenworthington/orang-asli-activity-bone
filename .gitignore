@@ -1,0 +1,50 @@
+# --- R session artifacts ---
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+*.Rcheck/
+
+# --- renv: track the lockfile + activate.R + settings.json, ignore the library ---
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# --- regenerable pipeline outputs (recreated by running the pipeline) ---
+_targets/
+outputs/models/
+outputs/figures/working/
+outputs/figures/diagnostic/
+outputs/_experiments/
+logs/
+
+# --- LaTeX build artifacts (from building the DAG .tex figures) ---
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+dags/*.pdf
+
+# --- macOS ---
+.DS_Store
+
+# --- editor state ---
+.vscode/
+.idea/
+
+# --- participant data (must never enter the deposit) ---
+# The OA HeLP data are individual-level records from an Indigenous population and
+# are shared on request from the corresponding author, not distributed here (see
+# data/README.md). Anyone who obtains them drops the CSVs into data/processed/ to
+# run the pipeline; this rule is what stops a subsequent `git add -A` in that
+# working copy from committing them to a public repository by accident.
+data/processed/*
+!data/processed/.gitkeep

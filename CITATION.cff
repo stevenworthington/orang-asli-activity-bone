@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below (preferred-citation)."
+title: >-
+  Replication code for "Industrialization, physical activity, and skeletal
+  health: Evidence from a within-population study of the Indigenous peoples of
+  Peninsular Malaysia"
+type: software
+version: "1.0.0"
+date-released: "2026-08-22"
+license: MIT
+repository-code: "https://github.com/stevenworthington/orang-asli-activity-bone"
+authors:
+  - { given-names: "Steven", family-names: "Worthington", orcid: "https://orcid.org/0000-0001-9550-5797", affiliation: "Institute for Quantitative Social Science, Harvard University, Cambridge, USA" }
+
+preferred-citation:
+  type: article
+  title: >-
+    Industrialization, physical activity, and skeletal health: Evidence from a
+    within-population study of the Indigenous peoples of Peninsular Malaysia
+  journal: "Journal of Bone and Mineral Research"
+  year: 2026
+  status: submitted
+  authors:
+    - { given-names: "Cecilia M. T.", family-names: "Sena", affiliation: "Department of Anthropology, University of New Mexico, Albuquerque, USA" }
+    - { given-names: "Steven", family-names: "Worthington", orcid: "https://orcid.org/0000-0001-9550-5797", affiliation: "Institute for Quantitative Social Science, Harvard University, Cambridge, USA" }
+    - { given-names: "Thomas S.", family-names: "Kraft", affiliation: "Department of Anthropology, University of Utah, Salt Lake City, USA; Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" }
+    - { given-names: "Fabiano T.", family-names: "Amorim", affiliation: "Department of Health, Exercise Science, and Sport, University of New Mexico, Albuquerque, USA" }
+    - { given-names: "Kumaresh Louis", family-names: "Christopher", affiliation: "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia" }
+    - { given-names: "Melissa", family-names: "Emery Thompson", affiliation: "Department of Anthropology, University of New Mexico, Albuquerque, USA; Department of Evolutionary Anthropology, Duke University, Durham, USA" }
+    - { given-names: "Kamal Solhaimi", name-particle: "bin", family-names: "Fadzil", affiliation: "Department of Anthropology and Sociology, Universiti Malaya, Kuala Lumpur, Malaysia; Center for Malaysian Indigenous Studies, Universiti Malaya, Kuala Lumpur, Malaysia" }
+    - { given-names: "Edwin Ser Ze", family-names: "Heng", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" }
+    - { given-names: "Nicholas B.", family-names: "Holowka", affiliation: "Department of Anthropology, Penn State University, University Park, USA" }
+    - { given-names: "Bee Ting", family-names: "Tan", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Parasitology, Faculty of Medicine, Universiti Malaya, Kuala Lumpur, Malaysia" }
+    - { given-names: "Janet L.", family-names: "Huebner", affiliation: "Duke Molecular Physiology Institute, Duke University, Durham, USA" }
+    - { given-names: "Tracy L.", family-names: "Kivell", affiliation: "Department of Human Origins, Max Planck Institute for Evolutionary Anthropology, Leipzig, Germany" }
+    - { given-names: "Virginia B.", family-names: "Kraus", affiliation: "Duke Molecular Physiology Institute, Duke University, Durham, USA; Division of Rheumatology, Department of Medicine, Duke University, Durham, USA" }
+    - { given-names: "Yvonne A. L.", family-names: "Lim", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Parasitology, Faculty of Medicine, Universiti Malaya, Kuala Lumpur, Malaysia" }
+    - { given-names: "Colin", family-names: "Nicholas", affiliation: "Center for Orang Asli Concerns, Subang Jaya, Malaysia" }
+    - { given-names: "Marissa", family-names: "Ramirez", affiliation: "Department of Health, Exercise Science, and Sport, University of New Mexico, Albuquerque, USA" }
+    - { given-names: "Izandis", name-particle: "bin", family-names: "Mohd Sayed", affiliation: "Hospital Orang Asli Gombak, Kuala Lumpur, Malaysia" }
+    - { given-names: "Kar Lye", family-names: "Tam", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" }
+    - { given-names: "Marina M.", family-names: "Watowich", affiliation: "Department of Biological Sciences, Vanderbilt University, Nashville, USA" }
+    - { given-names: "Vivek V.", family-names: "Venkataraman", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Anthropology and Archaeology, University of Calgary, Calgary, Canada" }
+    - { given-names: "Amanda J.", family-names: "Lea", affiliation: "Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia; Department of Biological Sciences, Vanderbilt University, Nashville, USA" }
+    - { given-names: "Ian J.", family-names: "Wallace", affiliation: "Department of Anthropology, University of New Mexico, Albuquerque, USA; Orang Asli Health and Lifeways Project, Kuala Lumpur, Malaysia" }
