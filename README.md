@@ -1,10 +1,10 @@
-# Replication code for "Industrialization, physical activity, and skeletal health"
+# Replication code for "Reduced physical activity is unlikely to explain declining bone health during industrialization"
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22062619.svg)](https://doi.org/10.5281/zenodo.22062619)
 
 Replication code for:
 
-> Cecilia M. T. Sena, Steven Worthington, Thomas S. Kraft, Fabiano T. Amorim, Kumaresh Louis Christopher, Melissa Emery Thompson, Kamal Solhaimi bin Fadzil, Edwin Ser Ze Heng, Nicholas B. Holowka, Tan Bee Ting A/P Tan Boon Huat, Janet L. Huebner, Tracy L. Kivell, Virginia B. Kraus, Yvonne A. L. Lim, Colin Nicholas, Marissa Ramirez, Izandis bin Mohd Sayed, Kar Lye Tam, Marina M. Watowich, Vivek V. Venkataraman, Amanda J. Lea, Ian J. Wallace. *Industrialization, physical activity, and skeletal health: Evidence from a within-population study of the Indigenous peoples of Peninsular Malaysia.*
+> Cecilia M. T. Sena, Steven Worthington, Thomas S. Kraft, Fabiano T. Amorim, Kumaresh Louis Christopher, Melissa Emery Thompson, Kamal Solhaimi bin Fadzil, Edwin Ser Ze Heng, Nicholas B. Holowka, Tan Bee Ting A/P Tan Boon Huat, Janet L. Huebner, Tracy L. Kivell, Virginia B. Kraus, Yvonne A. L. Lim, Colin Nicholas, Marissa Ramirez, Izandis bin Mohd Sayed, Kar Lye Tam, Marina M. Watowich, Vivek V. Venkataraman, Amanda J. Lea, Ian J. Wallace. *Reduced physical activity is unlikely to explain declining bone health during industrialization.*
 >
 > Cecilia M. T. Sena and Steven Worthington contributed equally. Corresponding author: Ian J. Wallace (iwallace@unm.edu).
 

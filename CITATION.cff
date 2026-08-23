@@ -1,12 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the article below (preferred-citation)."
 title: >-
-  Replication code for "Industrialization, physical activity, and skeletal
-  health: Evidence from a within-population study of the Indigenous peoples of
-  Peninsular Malaysia"
+  Replication code for "Reduced physical activity is unlikely to explain declining bone health during industrialization"
 type: software
-version: "1.0.0"
-date-released: "2026-08-22"
+version: "1.0.1"
+date-released: "2026-08-23"
 license: MIT
 repository-code: "https://github.com/stevenworthington/orang-asli-activity-bone"
 authors:
@@ -15,11 +13,9 @@ authors:
 preferred-citation:
   type: article
   title: >-
-    Industrialization, physical activity, and skeletal health: Evidence from a
-    within-population study of the Indigenous peoples of Peninsular Malaysia
-  journal: "Journal of Bone and Mineral Research"
+    Reduced physical activity is unlikely to explain declining bone health during industrialization
   year: 2026
-  status: submitted
+  status: in-preparation
   authors:
     - { given-names: "Cecilia M. T.", family-names: "Sena", affiliation: "Department of Anthropology, University of New Mexico, Albuquerque, USA" }
     - { given-names: "Steven", family-names: "Worthington", orcid: "https://orcid.org/0000-0001-9550-5797", affiliation: "Institute for Quantitative Social Science, Harvard University, Cambridge, USA" }
